@@ -37,6 +37,19 @@ post '/visit' do
 			return erb :visit
 		end
 
+			# -----REFACTORING-------
+		# hh = { :username => 'Enter name',
+				# :phone => 'Enter phone',
+				# :datetime => 'Enter time' }
+		
+		# hh.each do |key, value|
+			# if params[key] == ''
+				# @error = [key]
+				# return erb :visit
+			# end
+		# end
+
+
 	erb "OK, your name: #{@username}, your phone: #{@phone}, date: #{@datetime} and your color: #{@color}"
 
 end
