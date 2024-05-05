@@ -6,10 +6,37 @@ get '/' do
 end
 
 get '/about' do
-	@error = "Something wrong"
+	# @error = "Error"
 	erb :about
 end
 
 get '/visit' do
 	erb :visit
+end
+
+post '/visit' do
+
+	@username = params[:username]
+	@phone = params[:phone]
+	@datetime = params[:datetime]
+	@color = params[:color]
+
+		if @username == ''
+			@error = 'Enter name'
+		end
+
+		if @phone == ''
+			@error = 'Enter phone'
+		end
+
+		if @datetime == ''
+			@error = 'Enter time'
+		end
+
+		if @error != ''
+			return erb :visit
+		end
+
+	erb "OK, your name: #{@username}, your phone: #{@phone}, date: #{@datetime} and your color: #{@color}"
+
 end
