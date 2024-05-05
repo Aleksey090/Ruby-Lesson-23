@@ -6,6 +6,7 @@ get '/' do
 end
 
 get '/about' do
+	@error = "Something wrong"
 	erb :about
 end
 
